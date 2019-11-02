@@ -13,8 +13,8 @@ RUN apt-get update \
 && mysql -u root -e "grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix'" \
 && zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -u zabbix -p zabbix --password="$MYSQL_PASSWORD" \
 && echo "DBPassword=zabbix" >> /etc/zabbix/zabbix_server.conf \
-# && sed -i -e 's/# php_value date.timezone Europe\/Riga/php_value date.timezone Europe\/Kiev/' /etc/zabbix/apache.conf \
-# EXPOSE 80/tcp
+&& sed -i -e 's/# php_value date.timezone Europe\/Riga/php_value date.timezone Europe\/Kiev/' /etc/zabbix/apache.conf
+EXPOSE 80/tcp
 
 # service zabbix-server start && service zabbix-agent start && service apache2 start && service mysql start
 
