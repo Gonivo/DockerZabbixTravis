@@ -1,7 +1,6 @@
-# Test task for Alpacked
 # Maintainer Evgeniy Deyneko
 
-Tto start docker container use:
+To start docker container use:
 
     sudo docker run -td -p **[host_port]**:80 --name **[name]** gonivo/alpacked-test-task
 
